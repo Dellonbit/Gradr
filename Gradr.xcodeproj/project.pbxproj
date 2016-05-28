@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		C921C11F1CF902B200B711ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921C11E1CF902B200B711ED /* AppDelegate.swift */; };
-		C921C1211CF902B200B711ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921C1201CF902B200B711ED /* ViewController.swift */; };
+		C921C1211CF902B200B711ED /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921C1201CF902B200B711ED /* ClassViewController.swift */; };
 		C921C1241CF902B200B711ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C921C1221CF902B200B711ED /* Main.storyboard */; };
 		C921C1271CF902B200B711ED /* Gradr.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C921C1251CF902B200B711ED /* Gradr.xcdatamodeld */; };
 		C921C1291CF902B200B711ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C921C1281CF902B200B711ED /* Assets.xcassets */; };
 		C921C12C1CF902B200B711ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C921C12A1CF902B200B711ED /* LaunchScreen.storyboard */; };
+		C921C1361CF9099100B711ED /* GradeClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921C1351CF9099100B711ED /* GradeClassViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C921C11B1CF902B200B711ED /* Gradr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gradr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C921C11E1CF902B200B711ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C921C1201CF902B200B711ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C921C1201CF902B200B711ED /* ClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		C921C1231CF902B200B711ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C921C1261CF902B200B711ED /* Gradr.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Gradr.xcdatamodel; sourceTree = "<group>"; };
 		C921C1281CF902B200B711ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C921C12B1CF902B200B711ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C921C12D1CF902B200B711ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C921C1351CF9099100B711ED /* GradeClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradeClassViewController.swift; path = ../GradeClassViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +59,8 @@
 			isa = PBXGroup;
 			children = (
 				C921C11E1CF902B200B711ED /* AppDelegate.swift */,
-				C921C1201CF902B200B711ED /* ViewController.swift */,
+				C921C1201CF902B200B711ED /* ClassViewController.swift */,
+				C921C1351CF9099100B711ED /* GradeClassViewController.swift */,
 				C921C1221CF902B200B711ED /* Main.storyboard */,
 				C921C1281CF902B200B711ED /* Assets.xcassets */,
 				C921C12A1CF902B200B711ED /* LaunchScreen.storyboard */,
@@ -99,6 +102,7 @@
 				TargetAttributes = {
 					C921C11A1CF902B200B711ED = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = B3V4C2NCHL;
 					};
 				};
 			};
@@ -138,7 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C921C1211CF902B200B711ED /* ViewController.swift in Sources */,
+				C921C1211CF902B200B711ED /* ClassViewController.swift in Sources */,
+				C921C1361CF9099100B711ED /* GradeClassViewController.swift in Sources */,
 				C921C11F1CF902B200B711ED /* AppDelegate.swift in Sources */,
 				C921C1271CF902B200B711ED /* Gradr.xcdatamodeld in Sources */,
 			);
@@ -255,10 +260,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Gradr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.della.Gradr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -266,10 +274,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Gradr/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.della.Gradr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
