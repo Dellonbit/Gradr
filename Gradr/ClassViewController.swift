@@ -14,6 +14,10 @@ class ClassViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    //enter button
+    @IBAction func enterButton(sender: AnyObject) {
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
