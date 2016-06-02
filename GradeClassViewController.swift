@@ -22,6 +22,10 @@ class GradeClassViewController: UIViewController {
     }
     
 
+    @IBAction func addStudent(sender: AnyObject) {
+    
+    }
+   
     /*
     // MARK: - Navigation
 

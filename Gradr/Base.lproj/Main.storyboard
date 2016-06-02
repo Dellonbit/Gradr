@@ -138,7 +138,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="f9p-Is-REd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qw9-Nd-b0t"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qw9-Nd-b0t">
+                            <connections>
+                                <action selector="addStudent:" destination="wNm-id-WnC" id="FnM-Ru-sfd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjG-GV-mgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
