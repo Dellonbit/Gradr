@@ -144,6 +144,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="classTitle" destination="zx8-B6-NXK" id="DsD-o7-AzY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjG-GV-mgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

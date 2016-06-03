@@ -10,6 +10,8 @@ import UIKit
 
 class GradeClassViewController: UIViewController {
 
+    @IBOutlet weak var classTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
