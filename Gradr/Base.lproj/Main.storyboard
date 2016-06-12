@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -73,6 +73,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="teacherclass" destination="Ibm-Gr-bBI" id="N5o-hz-7mx"/>
+                        <outlet property="username" destination="FuA-59-Ape" id="Yd9-d4-cwQ"/>
                         <segue destination="O8D-9I-cxx" kind="presentation" id="cYH-cd-Qeh"/>
                     </connections>
                 </viewController>
@@ -146,6 +148,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="classTitle" destination="zx8-B6-NXK" id="DsD-o7-AzY"/>
+                        <outlet property="stdGrade" destination="48D-sG-Rb9" id="HSG-tC-KOq"/>
+                        <outlet property="stdName" destination="PFG-KL-Vc4" id="EWd-jp-Laf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjG-GV-mgM" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,10 @@
 		C921C1291CF902B200B711ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C921C1281CF902B200B711ED /* Assets.xcassets */; };
 		C921C12C1CF902B200B711ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C921C12A1CF902B200B711ED /* LaunchScreen.storyboard */; };
 		C921C1361CF9099100B711ED /* GradeClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921C1351CF9099100B711ED /* GradeClassViewController.swift */; };
+		C9A8C0561D0C96D2007A4A87 /* Instructor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0541D0C96D2007A4A87 /* Instructor+CoreDataProperties.swift */; };
+		C9A8C0571D0C96D2007A4A87 /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0551D0C96D2007A4A87 /* Instructor.swift */; };
+		C9A8C05A1D0C96E7007A4A87 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0581D0C96E7007A4A87 /* Student+CoreDataProperties.swift */; };
+		C9A8C05B1D0C96E7007A4A87 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0591D0C96E7007A4A87 /* Student.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		C921C12B1CF902B200B711ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C921C12D1CF902B200B711ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C921C1351CF9099100B711ED /* GradeClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradeClassViewController.swift; path = ../GradeClassViewController.swift; sourceTree = "<group>"; };
+		C9A8C0541D0C96D2007A4A87 /* Instructor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instructor+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9A8C0551D0C96D2007A4A87 /* Instructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
+		C9A8C0581D0C96E7007A4A87 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9A8C0591D0C96E7007A4A87 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +66,44 @@
 		C921C11D1CF902B200B711ED /* Gradr */ = {
 			isa = PBXGroup;
 			children = (
-				C921C11E1CF902B200B711ED /* AppDelegate.swift */,
-				C921C1201CF902B200B711ED /* ClassViewController.swift */,
-				C921C1351CF9099100B711ED /* GradeClassViewController.swift */,
-				C921C1221CF902B200B711ED /* Main.storyboard */,
-				C921C1281CF902B200B711ED /* Assets.xcassets */,
-				C921C12A1CF902B200B711ED /* LaunchScreen.storyboard */,
-				C921C12D1CF902B200B711ED /* Info.plist */,
-				C921C1251CF902B200B711ED /* Gradr.xcdatamodeld */,
+				C9A8C05D1D0C9BD8007A4A87 /* Controller */,
+				C9A8C05E1D0C9BFD007A4A87 /* View */,
+				C9A8C05C1D0C9BA8007A4A87 /* Model */,
 			);
 			path = Gradr;
+			sourceTree = "<group>";
+		};
+		C9A8C05C1D0C9BA8007A4A87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C921C1251CF902B200B711ED /* Gradr.xcdatamodeld */,
+				C921C12D1CF902B200B711ED /* Info.plist */,
+				C9A8C0551D0C96D2007A4A87 /* Instructor.swift */,
+				C9A8C0541D0C96D2007A4A87 /* Instructor+CoreDataProperties.swift */,
+				C9A8C0591D0C96E7007A4A87 /* Student.swift */,
+				C9A8C0581D0C96E7007A4A87 /* Student+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		C9A8C05D1D0C9BD8007A4A87 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C921C1201CF902B200B711ED /* ClassViewController.swift */,
+				C921C11E1CF902B200B711ED /* AppDelegate.swift */,
+				C921C1351CF9099100B711ED /* GradeClassViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		C9A8C05E1D0C9BFD007A4A87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C921C12A1CF902B200B711ED /* LaunchScreen.storyboard */,
+				C921C1281CF902B200B711ED /* Assets.xcassets */,
+				C921C1221CF902B200B711ED /* Main.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +179,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C921C1211CF902B200B711ED /* ClassViewController.swift in Sources */,
+				C9A8C05A1D0C96E7007A4A87 /* Student+CoreDataProperties.swift in Sources */,
 				C921C1361CF9099100B711ED /* GradeClassViewController.swift in Sources */,
+				C9A8C05B1D0C96E7007A4A87 /* Student.swift in Sources */,
 				C921C11F1CF902B200B711ED /* AppDelegate.swift in Sources */,
+				C9A8C0561D0C96D2007A4A87 /* Instructor+CoreDataProperties.swift in Sources */,
 				C921C1271CF902B200B711ED /* Gradr.xcdatamodeld in Sources */,
+				C9A8C0571D0C96D2007A4A87 /* Instructor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +343,7 @@
 				C921C1321CF902B200B711ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

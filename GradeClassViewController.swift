@@ -12,6 +12,10 @@ class GradeClassViewController: UIViewController {
 
     @IBOutlet weak var classTitle: UILabel!
     
+    
+    @IBOutlet weak var stdGrade: UITextField!
+    @IBOutlet weak var stdName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,18 +28,28 @@ class GradeClassViewController: UIViewController {
     }
     
 
+    // add student data to coredata
     @IBAction func addStudent(sender: AnyObject) {
     
+       let stName = stdName.text
+       let stGrade = stdGrade.text
+       let stclass = classTitle.text
+        
+        //save data in coredata
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        _ = Student(studName: stName!, studClass: stclass!, studGrade: stGrade!, context: managedContext)
+       
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        //dismissViewControllerAnimated(true, completion: nil)
+        
     }
    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
