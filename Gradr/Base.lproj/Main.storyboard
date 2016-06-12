@@ -82,22 +82,25 @@
             </objects>
             <point key="canvasLocation" x="-434" y="157"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Students Table View Controller-->
         <scene sceneID="2Sg-d3-fRC">
             <objects>
-                <tableViewController id="cTG-8z-1hC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IYm-r8-hba">
+                <tableViewController id="cTG-8z-1hC" customClass="StudentsTableViewController" customModule="Gradr" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" id="IYm-r8-hba">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UMw-Qh-zXL">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studReuse" rowHeight="79" id="UMw-Qh-zXL">
+                                <rect key="frame" x="0.0" y="92" width="600" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UMw-Qh-zXL" id="Uh0-7c-bAb">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="wNm-id-WnC" kind="show" id="VmJ-K3-Tdt"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -108,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVf-qd-nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="103"/>
+            <point key="canvasLocation" x="1867" y="162"/>
         </scene>
         <!--Grade Class View Controller-->
         <scene sceneID="IMy-pl-yrO">
@@ -182,24 +185,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjG-GV-mgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2517" y="142"/>
+            <point key="canvasLocation" x="2541" y="162"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Courses Table View Controller-->
         <scene sceneID="fiw-G0-bzH">
             <objects>
-                <tableViewController id="eym-VK-VuU" sceneMemberID="viewController">
+                <tableViewController id="eym-VK-VuU" customClass="CoursesTableViewController" customModule="Gradr" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" id="cTT-Gk-XAs">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="74" id="X1I-c1-aoG">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="courseReuse" rowHeight="74" id="X1I-c1-aoG">
                                 <rect key="frame" x="0.0" y="92" width="600" height="74"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X1I-c1-aoG" id="hmw-oK-Gnl">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="73"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cTG-8z-1hC" kind="show" id="JgA-PC-xuA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
