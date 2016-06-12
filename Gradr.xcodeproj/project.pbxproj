@@ -18,6 +18,8 @@
 		C9A8C0571D0C96D2007A4A87 /* Instructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0551D0C96D2007A4A87 /* Instructor.swift */; };
 		C9A8C05A1D0C96E7007A4A87 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0581D0C96E7007A4A87 /* Student+CoreDataProperties.swift */; };
 		C9A8C05B1D0C96E7007A4A87 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0591D0C96E7007A4A87 /* Student.swift */; };
+		C9A8C0611D0D0C82007A4A87 /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C05F1D0D0C82007A4A87 /* Course+CoreDataProperties.swift */; };
+		C9A8C0621D0D0C82007A4A87 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0601D0D0C82007A4A87 /* Course.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		C9A8C0551D0C96D2007A4A87 /* Instructor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Instructor.swift; sourceTree = "<group>"; };
 		C9A8C0581D0C96E7007A4A87 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C9A8C0591D0C96E7007A4A87 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		C9A8C05F1D0D0C82007A4A87 /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9A8C0601D0D0C82007A4A87 /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,8 @@
 			isa = PBXGroup;
 			children = (
 				C921C1251CF902B200B711ED /* Gradr.xcdatamodeld */,
+				C9A8C05F1D0D0C82007A4A87 /* Course+CoreDataProperties.swift */,
+				C9A8C0601D0D0C82007A4A87 /* Course.swift */,
 				C921C12D1CF902B200B711ED /* Info.plist */,
 				C9A8C0551D0C96D2007A4A87 /* Instructor.swift */,
 				C9A8C0541D0C96D2007A4A87 /* Instructor+CoreDataProperties.swift */,
@@ -180,8 +186,10 @@
 			files = (
 				C921C1211CF902B200B711ED /* ClassViewController.swift in Sources */,
 				C9A8C05A1D0C96E7007A4A87 /* Student+CoreDataProperties.swift in Sources */,
+				C9A8C0621D0D0C82007A4A87 /* Course.swift in Sources */,
 				C921C1361CF9099100B711ED /* GradeClassViewController.swift in Sources */,
 				C9A8C05B1D0C96E7007A4A87 /* Student.swift in Sources */,
+				C9A8C0611D0D0C82007A4A87 /* Course+CoreDataProperties.swift in Sources */,
 				C921C11F1CF902B200B711ED /* AppDelegate.swift in Sources */,
 				C9A8C0561D0C96D2007A4A87 /* Instructor+CoreDataProperties.swift in Sources */,
 				C921C1271CF902B200B711ED /* Gradr.xcdatamodeld in Sources */,

@@ -28,12 +28,23 @@ class ClassViewController: UIViewController {
         let teachname = username.text
         let teachclass = teacherclass.text
 
-        //save data in coredata
+        //retrieve data from coredata check for duplicates before storage
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Instructor")
         var locations  = [Instructor]()
         
+
+        
+        do {
+            locations =
+                try managedContext.executeFetchRequest(fetchRequest) as! [Instructor]
+        
+        }
+        catch let error as NSError {
+        
+        
+        }
         
         
     }
