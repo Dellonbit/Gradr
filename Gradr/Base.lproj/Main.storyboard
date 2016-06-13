@@ -111,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVf-qd-nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1867" y="162"/>
+            <point key="canvasLocation" x="2039" y="53"/>
         </scene>
         <!--Grade Class View Controller-->
         <scene sceneID="IMy-pl-yrO">
