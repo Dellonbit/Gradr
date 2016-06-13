@@ -25,12 +25,12 @@ class StudentsTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return GradConvenience.sharedInstance().studLst.count
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -40,7 +40,8 @@ class StudentsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("studReuse", forIndexPath: indexPath)
-
+        let studData = GradConvenience.sharedInstance().studLst[indexPath.row]
+        cell.textLabel?.text = studData.name
         // Configure the cell...
 
         return cell

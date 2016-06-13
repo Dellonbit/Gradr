@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ClassViewController: UIViewController {
+class ClassViewController: UIViewController, UITextFieldDelegate  {
 
     
     @IBOutlet weak var username: UITextField!
@@ -31,34 +31,29 @@ class ClassViewController: UIViewController {
         //retrieve data from coredata check for duplicates before storage
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName: "Instructor")
-        var teachers  = [Instructor]()
+        let fetchRequest = NSFetchRequest(entityName: "Course")
+        var coursesList  = [Course]()
         
         
         do {
-            teachers =
-                try managedContext.executeFetchRequest(fetchRequest) as! [Instructor]
+            coursesList =
+                try managedContext.executeFetchRequest(fetchRequest) as! [Course]
             if teachname == " " || teachclass == " " {
-                var msg  = "username or password field empty"
+                let msg  = "username or password field empty"
                 showMsg(msg)
             }
             else {
-                for itm in teachers{
-                    if itm.username == teachname{
+                for itm in coursesList{
+                    if itm.teacherName == teachname && itm.name == teachclass {
                         // teacher already in database just add his course
-//                        let savedRecipe = Recipe(recpName: RecipeName[item], recpCookTime: cookTime[item], pic: pic!, indPrep: arraystring, inst: instrxn[item].stringByReplacingOccurrencesOfString(".", withString:"\n"), context: managedContext)
-//                        //emptystring
-//                        arraystring = ""
-//                        RecConvenience.sharedInstance().recipeList.append(savedRecipe)
-//                        try managedContext.save()
+                        
                     }
-                    else if itm.username != teachname{
-                       // new teacher add teacher and course
-//                        let savedRecipe = Recipe(recpName: RecipeName[item], recpCookTime: cookTime[item], pic: pic!, indPrep: arraystring, inst: instrxn[item].stringByReplacingOccurrencesOfString(".", withString:"\n"), context: managedContext)
-//                        //emptystring
-//                        arraystring = ""
-//                        RecConvenience.sharedInstance().recipeList.append(savedRecipe)
-//                        try managedContext.save()
+                    else {
+                        //new teacher add teacher and course
+                        let savedCourse = Course(courseName: teachclass!, teachName: teachname!, context: managedContext)
+                        coursesList.append(savedCourse)
+                        GradConvenience.sharedInstance().cours = coursesList
+                        try managedContext.save()
                         
                     }
                 }

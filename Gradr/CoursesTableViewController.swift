@@ -34,13 +34,14 @@ class CoursesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 8
+        return GradConvenience.sharedInstance().cours.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("courseReuse", forIndexPath: indexPath)
-
+        let cour = GradConvenience.sharedInstance().cours[indexPath.row]
+        cell.textLabel?.text = cour.name
         // Configure the cell...
 
         return cell

@@ -99,7 +99,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="wNm-id-WnC" kind="show" id="VmJ-K3-Tdt"/>
+                                    <segue destination="wNm-id-WnC" kind="show" identifier="toStudEditor" id="VmJ-K3-Tdt"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -185,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjG-GV-mgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2541" y="162"/>
+            <point key="canvasLocation" x="2854" y="114"/>
         </scene>
         <!--Courses Table View Controller-->
         <scene sceneID="fiw-G0-bzH">
@@ -204,7 +204,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="cTG-8z-1hC" kind="show" id="JgA-PC-xuA"/>
+                                    <segue destination="cTG-8z-1hC" kind="show" identifier="toStudList" id="JgA-PC-xuA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
