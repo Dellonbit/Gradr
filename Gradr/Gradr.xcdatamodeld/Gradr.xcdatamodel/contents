@@ -2,7 +2,7 @@
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
     <entity name="Course" representedClassName=".Course" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="teacher" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teacherName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Instructor" representedClassName=".Instructor" syncable="YES">
         <attribute name="courseName" optional="YES" attributeType="String" syncable="YES"/>
@@ -14,8 +14,8 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Course" positionX="-54" positionY="36" width="128" height="75"/>
         <element name="Instructor" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Student" positionX="-54" positionY="9" width="128" height="90"/>
-        <element name="Course" positionX="-54" positionY="36" width="128" height="75"/>
     </elements>
 </model>
