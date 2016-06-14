@@ -20,6 +20,8 @@ class ClassViewController: UIViewController, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        username.delegate = self
+        teacherclass.delegate = self
     }
     
     //enter button
@@ -33,30 +35,45 @@ class ClassViewController: UIViewController, UITextFieldDelegate  {
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Course")
         var coursesList  = [Course]()
-        
+        //print ("nothing here, \(teachname!)")
         
         do {
             coursesList =
                 try managedContext.executeFetchRequest(fetchRequest) as! [Course]
-            if teachname == " " || teachclass == " " {
+            if teachname! == "teacher's name" || teachclass! == "class name" || teachname! == "" || teachclass! == "" {
                 let msg  = "username or password field empty"
                 showMsg(msg)
+                print ("nothing here, \(teachname!)")
             }
-            else {
-                for itm in coursesList{
-                    if itm.teacherName == teachname && itm.name == teachclass {
-                        // teacher already in database just add his course
-                        
-                    }
-                    else {
-                        //new teacher add teacher and course
-                        let savedCourse = Course(courseName: teachclass!, teachName: teachname!, context: managedContext)
-                        coursesList.append(savedCourse)
-                        GradConvenience.sharedInstance().cours = coursesList
-                        try managedContext.save()
-                        
+             else {
+                
+                if coursesList.count == 0 {
+                    //print("added")
+                    //new teacher add teacher and course
+                    let savedCourse = Course(courseName: teachclass!, teachName: teachname!, context: managedContext)
+                    coursesList.append(savedCourse)
+                    GradConvenience.sharedInstance().cours = coursesList
+                    try managedContext.save()
+                
+                }else {
+                
+                    for itm in coursesList{
+                        //print( "\(coursesList)")
+                        if itm.teacherName == teachname && itm.name == teachclass {
+                            return
+                        }
+                        else {
+                            //print("added nfew")
+                            //new teacher add teacher and course
+                            let savedCourse = Course(courseName: teachclass!, teachName: teachname!, context: managedContext)
+                            coursesList.append(savedCourse)
+                            GradConvenience.sharedInstance().cours = coursesList
+                            try managedContext.save()
+                        }
                     }
                 }
+                //print( "\(coursesList)")
+                self.performSegueWithIdentifier("toNav", sender: self)
             }
         
         }
@@ -67,7 +84,21 @@ class ClassViewController: UIViewController, UITextFieldDelegate  {
         
         
     }
-        
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        username.resignFirstResponder()
+        teacherclass.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        username.resignFirstResponder()
+        teacherclass.resignFirstResponder()
+        view.endEditing(true)
+    }
+    
+    
+    
     func showMsg(msg:String) {
         let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))

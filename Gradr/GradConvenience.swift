@@ -12,6 +12,8 @@ class GradConvenience{
 
     var cours = [Course]()
     var studLst = [Student]()
+    var courseLabel: String!
+    var courseStud = [Student]()
    
     // MARK: - Shared Instance: singleton class
     class func sharedInstance() -> GradConvenience {

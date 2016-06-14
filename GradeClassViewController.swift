@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class GradeClassViewController: UIViewController {
+class GradeClassViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var classTitle: UILabel!
     
@@ -19,7 +19,10 @@ class GradeClassViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        stdGrade.delegate = self
+        stdName.delegate = self
+        classTitle.text = GradConvenience.sharedInstance().courseLabel
         // Do any additional setup after loading the view.
     }
 
@@ -36,12 +39,12 @@ class GradeClassViewController: UIViewController {
        let stGrade = stdGrade.text
        let stclass = classTitle.text
         
+        print ( "the variabeip, \(stName)")
         //retrieve data from coredata check for duplicates before storage
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Student")
         var stdList  = [Student]()
-        
         
         do {
             stdList =
@@ -80,6 +83,17 @@ class GradeClassViewController: UIViewController {
         
     }
    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        stdName.resignFirstResponder()
+        stdGrade.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        stdName.resignFirstResponder()
+        stdGrade.resignFirstResponder()
+        view.endEditing(true)
+    }
     
     func showMsg(msg:String) {
         let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.Alert)

@@ -30,12 +30,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FuA-59-Ape">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="teacher's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FuA-59-Ape">
                                 <rect key="frame" x="158" y="236" width="409" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibm-Gr-bBI">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="class name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ibm-Gr-bBI">
                                 <rect key="frame" x="158" y="304" width="409" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -75,7 +75,7 @@
                     <connections>
                         <outlet property="teacherclass" destination="Ibm-Gr-bBI" id="N5o-hz-7mx"/>
                         <outlet property="username" destination="FuA-59-Ape" id="Yd9-d4-cwQ"/>
-                        <segue destination="na1-e1-9N1" kind="presentation" id="MIl-m9-hHZ"/>
+                        <segue destination="na1-e1-9N1" kind="presentation" identifier="toNav" id="MIl-m9-hHZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -86,16 +86,16 @@
         <scene sceneID="2Sg-d3-fRC">
             <objects>
                 <tableViewController id="cTG-8z-1hC" customClass="StudentsTableViewController" customModule="Gradr" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="28" sectionFooterHeight="28" id="IYm-r8-hba">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" id="IYm-r8-hba">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studReuse" rowHeight="79" id="UMw-Qh-zXL">
-                                <rect key="frame" x="0.0" y="92" width="600" height="79"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studReuse" rowHeight="73" id="UMw-Qh-zXL">
+                                <rect key="frame" x="0.0" y="92" width="600" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UMw-Qh-zXL" id="Uh0-7c-bAb">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -111,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVf-qd-nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2039" y="53"/>
+            <point key="canvasLocation" x="1875" y="157"/>
         </scene>
         <!--Grade Class View Controller-->
         <scene sceneID="IMy-pl-yrO">
@@ -203,9 +203,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="73"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="cTG-8z-1hC" kind="show" identifier="toStudList" id="JgA-PC-xuA"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -214,10 +211,13 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Ddy-QE-S8T"/>
+                    <connections>
+                        <segue destination="cTG-8z-1hC" kind="show" identifier="toStudList" id="F0g-MS-8jE"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YK2-Tl-Clz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1156" y="162"/>
+            <point key="canvasLocation" x="1259" y="87"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jdA-v3-1sF">
