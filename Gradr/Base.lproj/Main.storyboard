@@ -82,7 +82,7 @@
             </objects>
             <point key="canvasLocation" x="-434" y="157"/>
         </scene>
-        <!--Students Table View Controller-->
+        <!--Students-->
         <scene sceneID="2Sg-d3-fRC">
             <objects>
                 <tableViewController id="cTG-8z-1hC" customClass="StudentsTableViewController" customModule="Gradr" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,9 +98,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="72"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="wNm-id-WnC" kind="show" identifier="toStudEditor" id="VmJ-K3-Tdt"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -108,10 +105,23 @@
                             <outlet property="delegate" destination="cTG-8z-1hC" id="ndy-BQ-WWU"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem systemItem="compose" id="fpd-kE-zKD">
+                            <connections>
+                                <action selector="addNewStud:" destination="cTG-8z-1hC" id="TEE-ic-ack"/>
+                                <segue destination="EK5-Zc-MEg" kind="presentation" identifier="newStud" id="ozW-KG-1KE"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Students" id="6Jw-Hw-PVo"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="EK5-Zc-MEg" kind="presentation" identifier="toStudEditor" id="XTH-Rj-6k3"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DVf-qd-nwg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875" y="157"/>
+            <point key="canvasLocation" x="2047" y="87"/>
         </scene>
         <!--Grade Class View Controller-->
         <scene sceneID="IMy-pl-yrO">
@@ -137,12 +147,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFG-KL-Vc4">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter student name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFG-KL-Vc4">
                                 <rect key="frame" x="182" y="227" width="377" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48D-sG-Rb9">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter student grade" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="48D-sG-Rb9">
                                 <rect key="frame" x="182" y="308" width="377" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -153,15 +163,28 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKP-sU-oL1">
+                                <rect key="frame" x="258" y="400" width="84" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LTL-VG-cEQ"/>
+                                    <constraint firstAttribute="width" constant="84" id="ffu-n1-Dio"/>
+                                </constraints>
+                                <state key="normal" title="Add student"/>
+                                <connections>
+                                    <action selector="addStudent:" destination="wNm-id-WnC" eventType="touchUpInside" id="qiQ-Jr-7he"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91502517409999995" green="1" blue="0.91921662380000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="eR4-al-un1" firstAttribute="top" secondItem="zx8-B6-NXK" secondAttribute="bottom" constant="110" id="6j5-5u-Cer"/>
                             <constraint firstItem="wfv-3Q-qIp" firstAttribute="top" secondItem="eR4-al-un1" secondAttribute="bottom" constant="60" id="Gnf-SZ-Lj1"/>
                             <constraint firstItem="PFG-KL-Vc4" firstAttribute="top" secondItem="zx8-B6-NXK" secondAttribute="bottom" constant="101" id="Hxc-KB-yhs"/>
+                            <constraint firstItem="kKP-sU-oL1" firstAttribute="centerX" secondItem="fWZ-mB-QTG" secondAttribute="centerX" id="JDH-u7-8KF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="48D-sG-Rb9" secondAttribute="trailing" constant="21" id="JyU-fo-Fpg"/>
                             <constraint firstItem="PFG-KL-Vc4" firstAttribute="leading" secondItem="eR4-al-un1" secondAttribute="trailing" constant="26" id="Zwt-ZB-I8G"/>
                             <constraint firstItem="eR4-al-un1" firstAttribute="leading" secondItem="fWZ-mB-QTG" secondAttribute="leadingMargin" constant="26" id="j2C-oQ-tCI"/>
+                            <constraint firstItem="kKP-sU-oL1" firstAttribute="top" secondItem="48D-sG-Rb9" secondAttribute="bottom" constant="62" id="k39-wa-fj0"/>
                             <constraint firstItem="48D-sG-Rb9" firstAttribute="top" secondItem="PFG-KL-Vc4" secondAttribute="bottom" constant="51" id="pX6-T7-olr"/>
                             <constraint firstItem="zx8-B6-NXK" firstAttribute="top" secondItem="TLw-fr-vyL" secondAttribute="bottom" constant="41" id="rcW-N1-21T"/>
                             <constraint firstItem="48D-sG-Rb9" firstAttribute="leading" secondItem="wfv-3Q-qIp" secondAttribute="trailing" constant="39" id="spu-i0-HZh"/>
@@ -170,13 +193,15 @@
                             <constraint firstAttribute="trailing" secondItem="PFG-KL-Vc4" secondAttribute="trailing" constant="41" id="ypa-ts-8fm"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="f9p-Is-REd">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Qw9-Nd-b0t">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Qw9-Nd-b0t">
                             <connections>
-                                <action selector="addStudent:" destination="wNm-id-WnC" id="FnM-Ru-sfd"/>
+                                <action selector="cancelButton:" destination="wNm-id-WnC" id="qEI-gr-Nvq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="classTitle" destination="zx8-B6-NXK" id="DsD-o7-AzY"/>
                         <outlet property="stdGrade" destination="48D-sG-Rb9" id="HSG-tC-KOq"/>
@@ -185,9 +210,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IjG-GV-mgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="114"/>
+            <point key="canvasLocation" x="3669" y="75"/>
         </scene>
-        <!--Courses Table View Controller-->
+        <!--Classes-->
         <scene sceneID="fiw-G0-bzH">
             <objects>
                 <tableViewController id="eym-VK-VuU" customClass="CoursesTableViewController" customModule="Gradr" customModuleProvider="target" sceneMemberID="viewController">
@@ -210,9 +235,9 @@
                             <outlet property="delegate" destination="eym-VK-VuU" id="3vA-Ro-Bme"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ddy-QE-S8T"/>
+                    <navigationItem key="navigationItem" title="Classes" id="Ddy-QE-S8T"/>
                     <connections>
-                        <segue destination="cTG-8z-1hC" kind="show" identifier="toStudList" id="F0g-MS-8jE"/>
+                        <segue destination="cTG-8z-1hC" kind="show" identifier="toStudList" id="gn6-xh-u9P"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YK2-Tl-Clz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,13 +247,17 @@
         <!--Navigation Controller-->
         <scene sceneID="jdA-v3-1sF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="na1-e1-9N1" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="na1-e1-9N1" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ev5-ad-vp8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lGt-rW-x8q">
+                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="eym-VK-VuU" kind="relationship" relationship="rootViewController" id="XcH-oU-x39"/>
                     </connections>
@@ -237,5 +266,26 @@
             </objects>
             <point key="canvasLocation" x="344" y="162"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lHG-cX-NBy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EK5-Zc-MEg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AMa-26-5s8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wNm-id-WnC" kind="relationship" relationship="rootViewController" id="Tdn-eB-zab"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fa-cA-hiN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2857" y="75"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ozW-KG-1KE"/>
+    </inferredMetricsTieBreakers>
 </document>

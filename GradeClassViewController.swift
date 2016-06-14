@@ -16,6 +16,7 @@ class GradeClassViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var stdGrade: UITextField!
     @IBOutlet weak var stdName: UITextField!
+    var isAdded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +40,7 @@ class GradeClassViewController: UIViewController, UITextFieldDelegate {
        let stGrade = stdGrade.text
        let stclass = classTitle.text
         
-        print ( "the variabeip, \(stName)")
+        
         //retrieve data from coredata check for duplicates before storage
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -49,30 +50,47 @@ class GradeClassViewController: UIViewController, UITextFieldDelegate {
         do {
             stdList =
                 try managedContext.executeFetchRequest(fetchRequest) as! [Student]
-            if stName == " " || stclass == " " || stGrade == " " {
+            if stName! == "enter student name" || stGrade! == "enter student grade" || stName! == "" || stGrade! == "" {
+                print ("new stu")
                 let msg  = "one or more fields needs to be filled"
                 showMsg(msg)
             }
             else {
-                for itm in stdList{
-                    if itm.name == stName && itm.course == stclass {
-                        // stdent already in database just add his  new grade course
-                        //new teacher add teacher and course
-                        let savedStd = Student(studName: stName!, studClass: stclass!, studGrade: stGrade!, context: managedContext)
-                        stdList.append(savedStd)
-                        GradConvenience.sharedInstance().studLst = stdList
-                        try managedContext.save()
-                        
-                    }
-                    else {
-                        //new student data
-                        let savedStd = Student(studName: stName!, studClass: stclass!, studGrade: stGrade!, context: managedContext)
-                        stdList.append(savedStd)
-                        GradConvenience.sharedInstance().studLst = stdList
-                        try managedContext.save()
-                        
-                    }
+                if stdList.count == 0 {
+                    //print ("list is zero")
+                    //new student data
+                    let savedStd = Student(stdName: stName!, coursName: stclass!, stdgrade: stGrade!, context: managedContext)
+                    stdList.append(savedStd)
+                    GradConvenience.sharedInstance().studLst = stdList
+                    try managedContext.save()
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                } else {
+                    print (stdList)
+
+                        for itm in stdList{
+                            print (itm.name)
+                            if itm.name! == stName && itm.courseName! == stclass {
+                                // stdent already in database just add his  new grade course
+                                isAdded = true
+                             }
+                          }
+                          if !isAdded {
+                                //new student data
+                                let savedStd = Student(stdName: stName!, coursName: stclass!, stdgrade: stGrade!, context: managedContext)
+                                stdList.append(savedStd)
+                                GradConvenience.sharedInstance().studLst = stdList
+                                GradConvenience.sharedInstance().courseStud.append(savedStd)
+                                try managedContext.save()
+                                
+                     }
                 }
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.dismissViewControllerAnimated(true, completion: nil)
+                })
+
             }
             
         }
@@ -80,9 +98,16 @@ class GradeClassViewController: UIViewController, UITextFieldDelegate {
             print("Could not fetch \(error), \(error.userInfo)")
             
         }
-        
+
     }
    
+    
+    
+    @IBAction func cancelButton(sender: AnyObject) {dispatch_async(dispatch_get_main_queue(), {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    })
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         stdName.resignFirstResponder()
         stdGrade.resignFirstResponder()

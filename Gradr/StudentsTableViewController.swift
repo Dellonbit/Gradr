@@ -12,10 +12,18 @@ class StudentsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         
     }
-
+    override func viewWillAppear(animated: Bool) {
+//        dispatch_async(dispatch_get_main_queue(), {
+//        if GradConvenience.sharedInstance().courseStud.count == 0 {
+//            let msg = " No student registered yet. Click plus button to add."
+//            self.showMsg(msg)
+//            }
+//        })
+        tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -30,7 +38,7 @@ class StudentsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return GradConvenience.sharedInstance().courseStud.count
+        return  GradConvenience.sharedInstance().courseStud.count
     }
 
     
@@ -45,9 +53,25 @@ class StudentsTableViewController: UITableViewController {
     
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let std =  GradConvenience.sharedInstance().studLst[indexPath.row]
-        GradConvenience.sharedInstance().courseLabel = std.course
+        //let std =  GradConvenience.sharedInstance().studLst[indexPath.row]
+        //GradConvenience.sharedInstance().courseLabel = std.course
         
+        dispatch_async(dispatch_get_main_queue(), {
+            self.performSegueWithIdentifier("toStudEditor", sender: self)
+        })
+        
+    }
+    
+    @IBAction func addNewStud(sender: AnyObject) {
+        dispatch_async(dispatch_get_main_queue(), {
+           self.performSegueWithIdentifier("newStud", sender: self)
+        })
+    }
+    
+    
+    func showMsg(msg:String) {
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
     }
     
 }

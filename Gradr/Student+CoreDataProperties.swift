@@ -2,7 +2,7 @@
 //  Student+CoreDataProperties.swift
 //  Gradr
 //
-//  Created by arianne on 2016-06-11.
+//  Created by arianne on 2016-06-14.
 //  Copyright © 2016 della. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -14,7 +14,7 @@ import CoreData
 
 extension Student {
 
-//    @NSManaged var course: String?
+//    @NSManaged var courseName: String?
 //    @NSManaged var grade: String?
 //    @NSManaged var name: String?
 

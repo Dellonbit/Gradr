@@ -15,7 +15,7 @@ class ClassViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var username: UITextField!
     
     @IBOutlet weak var teacherclass: UITextField!
-    
+    var isAdded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +34,18 @@ class ClassViewController: UIViewController, UITextFieldDelegate  {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Course")
+        let fR = NSFetchRequest(entityName: "Student")
         var coursesList  = [Course]()
+        var stdentList = [Student]()
         //print ("nothing here, \(teachname!)")
         
         do {
+            stdentList = try managedContext.executeFetchRequest(fR) as! [Student]
+                try managedContext.executeFetchRequest(fetchRequest) as! [Course]
             coursesList =
                 try managedContext.executeFetchRequest(fetchRequest) as! [Course]
+            GradConvenience.sharedInstance().studLst = stdentList
+            
             if teachname! == "teacher's name" || teachclass! == "class name" || teachname! == "" || teachclass! == "" {
                 let msg  = "username or password field empty"
                 showMsg(msg)
@@ -53,16 +59,19 @@ class ClassViewController: UIViewController, UITextFieldDelegate  {
                     let savedCourse = Course(courseName: teachclass!, teachName: teachname!, context: managedContext)
                     coursesList.append(savedCourse)
                     GradConvenience.sharedInstance().cours = coursesList
+                    
                     try managedContext.save()
                 
                 }else {
                 
-                    for itm in coursesList{
-                        //print( "\(coursesList)")
-                        if itm.teacherName == teachname && itm.name == teachclass {
-                            return
+                       for itm in coursesList{
+                            if itm.teacherName == teachname && itm.name == teachclass {
+                                isAdded = true
+                            }
                         }
-                        else {
+                    
+                        if !isAdded {
+                            isAdded = false
                             //print("added nfew")
                             //new teacher add teacher and course
                             let savedCourse = Course(courseName: teachclass!, teachName: teachname!, context: managedContext)
@@ -71,7 +80,7 @@ class ClassViewController: UIViewController, UITextFieldDelegate  {
                             try managedContext.save()
                         }
                     }
-                }
+                
                 //print( "\(coursesList)")
                 self.performSegueWithIdentifier("toNav", sender: self)
             }

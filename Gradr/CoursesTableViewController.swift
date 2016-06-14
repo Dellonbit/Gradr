@@ -50,18 +50,23 @@ class CoursesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
        let couss =  GradConvenience.sharedInstance().cours[indexPath.row]
         GradConvenience.sharedInstance().courseLabel = couss.name
-        GradConvenience.sharedInstance().courseStud.removeAll()
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            for stdCours in GradConvenience.sharedInstance().studLst {
-                if stdCours.course == couss.name {
-                   GradConvenience.sharedInstance().courseStud.append(stdCours)
-                   print(stdCours.name)
-                }
+        GradConvenience.sharedInstance().getStdbyClass(couss.name!) { (success, errormsg) in
+            if success {
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.performSegueWithIdentifier("toStudList", sender: self)
+                })
+
             }
-        })
+            else {
+                let msg = " Error loading student data"
+                self.showMsg(msg)
+            }
+        }
         
-        //self.performSegueWithIdentifier("toStudList", sender: self)
     }
     
+    func showMsg(msg:String) {
+        let alert = UIAlertController(title: "", message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+    }
 }

@@ -15,8 +15,9 @@
 		C921C12C1CF902B200B711ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C921C12A1CF902B200B711ED /* LaunchScreen.storyboard */; };
 		C921C1361CF9099100B711ED /* GradeClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C921C1351CF9099100B711ED /* GradeClassViewController.swift */; };
 		C9A1EA551D0F166000F8E517 /* GradConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A1EA541D0F166000F8E517 /* GradConvenience.swift */; };
-		C9A8C05A1D0C96E7007A4A87 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0581D0C96E7007A4A87 /* Student+CoreDataProperties.swift */; };
-		C9A8C05B1D0C96E7007A4A87 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0591D0C96E7007A4A87 /* Student.swift */; };
+		C9A1EA581D0FDC4B00F8E517 /* Student+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A1EA561D0FDC4B00F8E517 /* Student+CoreDataProperties.swift */; };
+		C9A1EA591D0FDC4B00F8E517 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A1EA571D0FDC4B00F8E517 /* Student.swift */; };
+		C9A1EA5B1D0FF64100F8E517 /* GradrApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A1EA5A1D0FF64100F8E517 /* GradrApi.swift */; };
 		C9A8C0641D0D1459007A4A87 /* CoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0631D0D1459007A4A87 /* CoursesTableViewController.swift */; };
 		C9A8C0661D0D14C2007A4A87 /* StudentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A8C0651D0D14C2007A4A87 /* StudentsTableViewController.swift */; };
 		C9B8B56F1D0F0B72000A10FF /* Course+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B8B56D1D0F0B72000A10FF /* Course+CoreDataProperties.swift */; };
@@ -34,8 +35,9 @@
 		C921C12D1CF902B200B711ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C921C1351CF9099100B711ED /* GradeClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GradeClassViewController.swift; path = ../GradeClassViewController.swift; sourceTree = "<group>"; };
 		C9A1EA541D0F166000F8E517 /* GradConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradConvenience.swift; sourceTree = "<group>"; };
-		C9A8C0581D0C96E7007A4A87 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C9A8C0591D0C96E7007A4A87 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		C9A1EA561D0FDC4B00F8E517 /* Student+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Student+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C9A1EA571D0FDC4B00F8E517 /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		C9A1EA5A1D0FF64100F8E517 /* GradrApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradrApi.swift; sourceTree = "<group>"; };
 		C9A8C0631D0D1459007A4A87 /* CoursesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesTableViewController.swift; sourceTree = "<group>"; };
 		C9A8C0651D0D14C2007A4A87 /* StudentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentsTableViewController.swift; sourceTree = "<group>"; };
 		C9B8B56D1D0F0B72000A10FF /* Course+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Course+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -83,11 +85,11 @@
 			isa = PBXGroup;
 			children = (
 				C921C1251CF902B200B711ED /* Gradr.xcdatamodeld */,
+				C9A1EA561D0FDC4B00F8E517 /* Student+CoreDataProperties.swift */,
+				C9A1EA571D0FDC4B00F8E517 /* Student.swift */,
 				C9B8B56D1D0F0B72000A10FF /* Course+CoreDataProperties.swift */,
 				C9B8B56E1D0F0B72000A10FF /* Course.swift */,
 				C921C12D1CF902B200B711ED /* Info.plist */,
-				C9A8C0591D0C96E7007A4A87 /* Student.swift */,
-				C9A8C0581D0C96E7007A4A87 /* Student+CoreDataProperties.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -97,6 +99,7 @@
 			children = (
 				C921C1201CF902B200B711ED /* ClassViewController.swift */,
 				C9A1EA541D0F166000F8E517 /* GradConvenience.swift */,
+				C9A1EA5A1D0FF64100F8E517 /* GradrApi.swift */,
 				C921C11E1CF902B200B711ED /* AppDelegate.swift */,
 				C921C1351CF9099100B711ED /* GradeClassViewController.swift */,
 			);
@@ -189,15 +192,16 @@
 			files = (
 				C9B8B5701D0F0B72000A10FF /* Course.swift in Sources */,
 				C921C1211CF902B200B711ED /* ClassViewController.swift in Sources */,
-				C9A8C05A1D0C96E7007A4A87 /* Student+CoreDataProperties.swift in Sources */,
 				C9A8C0661D0D14C2007A4A87 /* StudentsTableViewController.swift in Sources */,
+				C9A1EA591D0FDC4B00F8E517 /* Student.swift in Sources */,
 				C921C1361CF9099100B711ED /* GradeClassViewController.swift in Sources */,
-				C9A8C05B1D0C96E7007A4A87 /* Student.swift in Sources */,
+				C9A1EA581D0FDC4B00F8E517 /* Student+CoreDataProperties.swift in Sources */,
 				C921C11F1CF902B200B711ED /* AppDelegate.swift in Sources */,
 				C9A1EA551D0F166000F8E517 /* GradConvenience.swift in Sources */,
 				C9B8B56F1D0F0B72000A10FF /* Course+CoreDataProperties.swift in Sources */,
 				C9A8C0641D0D1459007A4A87 /* CoursesTableViewController.swift in Sources */,
 				C921C1271CF902B200B711ED /* Gradr.xcdatamodeld in Sources */,
+				C9A1EA5B1D0FF64100F8E517 /* GradrApi.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
